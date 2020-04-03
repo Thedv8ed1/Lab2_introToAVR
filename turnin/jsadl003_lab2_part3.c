@@ -1,8 +1,10 @@
 /*	Author: jsadl003
  *      Partner(s) Name: Jason Sadler
  *	Lab Section: 021
- *	Assignment: Lab #2  Exercise #1
- *	Exercise Description: [optional - include for your own benefit]
+ *	Assignment: Lab #2  Exercise #3
+ *	Exercise Description: Extend the previous program to still write 
+                            the available spaces number, but only to PC3..PC0, 
+                            and to set PC7 to 1 if the lot is full.
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
