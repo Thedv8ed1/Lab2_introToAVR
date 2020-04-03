@@ -26,102 +26,49 @@
 echo ======================================================\n
 echo Running all tests..."\n\n
 
-test “PINA: 0x00 => PORTC: 0x00”
+# test 1
+test “PINA,B,C: 0x00 => PORTD: 0x00”
 setPINA 0x00
+setPINB 0x00
+setPINC 0x00
 continue 5
-expectPORTC 0x00
+expectPORTD 0x00
 checkResult
 
-test “PINA: 0x01 => PORTC: 0x01”
-setPINA 0x01
+#test 2
+test “PINA,B,C: 0x2E => PORTD: 0x00”
+setPINA 0x2E
+setPINB 0x2E
+setPINC 0x2E
 continue 5
-expectPORTC 0x01
+expectPORTD 0x00
 checkResult
 
-test “PINA: 0x02 => PORTC: 0x01”
-setPINA 0x02
+#test 3
+test “PINA,B,C: 0x32 => PORTD: 0x01”
+setPINA 0x32
+setPINB 0x32
+setPINC 0x32
 continue 5
-expectPORTC 0x01
+expectPORTD 0x01
 checkResult
 
-test “PINA: 0x03 => PORTC: 0x02”
-setPINA 0x03
+#test 4
+test “PINA(0x78),B(0x00),C(0x0A):0x82 => PORTD: 0x02”
+setPINA 0x78
+setPINB 0x00
+setPINC 0x0A
 continue 5
-expectPORTC 0x02
+expectPORTD 0x02
 checkResult
 
-test “PINA: 0x04 => PORTC: 0x01”
-setPINA 0x04
+test “PINA(0xC8),B(0x00),C(0x0A):0xD2 => PORTD: 0x03”
+setPINA 0xC8
+setPINB 0x05
+setPINC 0x0A
 continue 5
-expectPORTC 0x01
+expectPORTD 0x03
 checkResult
-
-test “PINA: 0x05 => PORTC: 0x02”
-setPINA 0x05
-continue 5
-expectPORTC 0x02
-checkResult
-
-test “PINA: 0x06 => PORTC: 0x02”
-setPINA 0x06
-continue 5
-expectPORTC 0x02
-checkResult
-
-test “PINA: 0x07 => PORTC: 0x03”
-setPINA 0x07
-continue 5
-expectPORTC 0x03
-checkResult
-
-test “PINA: 0x08 => PORTC: 0x01”
-setPINA 0x08
-continue 5
-expectPORTC 0x01
-checkResult
-
-test “PINA: 0x09 => PORTC: 0x02”
-setPINA 0x09
-continue 5
-expectPORTC 0x02
-checkResult
-
-test “PINA: 0x0A => PORTC: 0x02”
-setPINA 0x0A
-continue 5
-expectPORTC 0x02
-checkResult
-
-test “PINA: 0x0B => PORTC: 0x03”
-setPINA 0x0B
-continue 5
-expectPORTC 0x03
-checkResult
-
-test “PINA: 0x0C => PORTC: 0x02”
-setPINA 0x0C
-continue 5
-expectPORTC 0x02
-checkResult
-
-test “PINA: 0x0D => PORTC: 0x03”
-setPINA 0x0D
-continue 5
-expectPORTC 0x03
-checkResult
-
-test “PINA: 0x0E => PORTC: 0x03”
-setPINA 0x0E
-continue 5
-expectPORTC 0x03
-checkResult
-
-test “PINA: 0x0F => PORTC: 0x84”
-setPINA 0x0F
-continue 5
-expectPORTC 0x84
-checkResult
-
 
 # Report on how many tests passed/tests ran
 set $passed=$tests-$failed
