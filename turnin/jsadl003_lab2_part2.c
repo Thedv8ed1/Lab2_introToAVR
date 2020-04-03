@@ -1,8 +1,13 @@
 /*	Author: jsadl003
  *      Partner(s) Name: Jason Sadler
  *	Lab Section: 021
- *	Assignment: Lab #2  Exercise #1
- *	Exercise Description: [optional - include for your own benefit]
+ *	Assignment: Lab #2  Exercise #2
+ *	Exercise Description: Port A's pins 3 to 0, each connect to a parking space sensor, 
+                            1 meaning a car is parked in the space, of a four-space parking lot. 
+                            Write a program that outputs in binary on port C the number of available 
+                            spaces (Hint: declare a variable "unsigned char cntavail"; you can assign 
+                            a number to a port as follows: PORTC = cntavail;).
+
  *
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
