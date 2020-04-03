@@ -18,8 +18,10 @@ int main(void) {
     DDRB = 0xFF; // Configure port B's 8 pins as outputs
     PORTB = 0x00; // Initialize PORTB output to 0’s
     /* Insert your solution below */
+    unsigned char temp_input = 0x00;
     while (1) {
-        PORTB = 0x0F; // Writes port B's 8 pins with 00001111
+        temp_input = PINA;
+	PORTB = temp_input;	// Writes port B's 8 pins with the values on port A's 8 pins
     }
     return 1;
 }
