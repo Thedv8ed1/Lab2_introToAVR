@@ -24,14 +24,17 @@ int main(void) {
     while(1){
               unsigned char cntavail;
       unsigned short i;
-      cntavail = 0;
+      cntavail = 0x00;
       for(i = 0; i < 5; i++){
          if(PINA>>i & 0x01){
             cntavail = cntavail + 1;   
          }
       }
       
-      PORTC = (cntavail) | ((cntavail==0x04)?cntavail<<5:0);	
+      PORTC = 4 - (cntavail);
+      if(cntavail == 0x04){
+	PORTC = (0x80);
+      }	
     }    
     return 0;
 }
